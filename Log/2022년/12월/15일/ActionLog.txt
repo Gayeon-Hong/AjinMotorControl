@@ -1,0 +1,5 @@
+10:46:09:909| Main Dlg - 프로그램시작 이벤트 발생
+10:46:18:450| Motion Dlg - Parameter Setting값 파일 불러오기 버튼 클릭 이벤트 발생
+10:46:26:609| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+10:46:28:789| Sequence Dlg - Auto Run 버튼 클릭 이벤트 발생
+10:46:34:653| Main Dlg - 프로그램종료 이벤트 발생

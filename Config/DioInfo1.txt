@@ -1,0 +1,32 @@
+INPUT	X01.00	Operater Switch Box Start Button(Green)
+INPUT	X01.01	Operater Switch Box Stop Button(Red)
+INPUT	X01.02	Operater Switch Box Homing Button(Yellow)
+INPUT	X01.03	Operater Switch Box Reset Button(Blue)
+INPUT	X01.04	
+INPUT	X01.05	Front Door Close Check Sensor
+INPUT	X01.06	Left Side Door Close Check Sensor
+INPUT	X01.07	Right Side Door Close Check Sensor
+INPUT	X01.08	Rear Door Open Check Sensor
+INPUT	X01.09	
+INPUT	X01.10	Emergency Stop Switch
+INPUT	X01.11	Door Open Check Sensor
+INPUT	X01.12	
+INPUT	X01.13	
+INPUT	X01.14	AIR PRESURE-1 Check Sensor
+INPUT	X01.15	MC Coil ON Signal
+OUTPUT	Y01.00	Operater Switch Box Start Switch Lamp(Green)
+OUTPUT	Y01.01	Operater Switch Box Stop Switch Lamp(Red)
+OUTPUT	Y01.02	Operater Switch Box Home Switch Lamp(Yellow)
+OUTPUT	Y01.03	Operater Switch Box Reset Siwtch Lamp(Blue)
+OUTPUT	Y01.04	
+OUTPUT	Y01.05	Front Door Lock
+OUTPUT	Y01.06	Left Side Door Lock
+OUTPUT	Y01.07	Left LOW Side Door Lock
+OUTPUT	Y01.08	Front Door Lock
+OUTPUT	Y01.09	
+OUTPUT	Y01.10	Signal Tower Red Lamp
+OUTPUT	Y01.11	Signal Tower Yellow Lamp
+OUTPUT	Y01.12	Signal Tower Green Lamp
+OUTPUT	Y01.13	Melody#1(Good)
+OUTPUT	Y01.14	Melody#2(Bad)
+OUTPUT	Y01.15	Melody#3(Warning)

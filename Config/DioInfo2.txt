@@ -1,0 +1,32 @@
+INPUT	X02.00	Carrier Align X BWD Check Sensor
+INPUT	X02.01	Carrier Align X FWD Check Sensor
+INPUT	X02.02	Carrier Align Y BWD Check Sensor
+INPUT	X02.03	Carrier Align Y FWD Check Sensor
+INPUT	X02.04	Carrier Detect Check Sensor
+INPUT	X02.05	
+INPUT	X02.06	Loadcell touch Check Sensor
+INPUT	X02.07	
+INPUT	X02.08	
+INPUT	X02.09	Dispenser Error
+INPUT	X02.10	Dispenser Temp OK
+INPUT	X02.11	Dispenser Pulse Out
+INPUT	X02.12	
+INPUT	X02.13	
+INPUT	X02.14	
+INPUT	X02.15	
+OUTPUT	Y02.00	
+OUTPUT	Y02.01	Carrier Align X FWD SOL
+OUTPUT	Y02.02	
+OUTPUT	Y02.03	Carrier Align Y FWD SOL
+OUTPUT	Y02.04	
+OUTPUT	Y02.05	
+OUTPUT	Y02.06	Dispenser Cleaner SOL
+OUTPUT	Y02.07	UV cooling SOL
+OUTPUT	Y02.08	
+OUTPUT	Y02.09	Dispenser Purge
+OUTPUT	Y02.10	Dispenser Shot
+OUTPUT	Y02.11	
+OUTPUT	Y02.12	
+OUTPUT	Y02.13	
+OUTPUT	Y02.14	
+OUTPUT	Y02.15	

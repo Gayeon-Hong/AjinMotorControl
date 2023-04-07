@@ -1,0 +1,153 @@
+13:23:52:556| Main Dlg - 프로그램시작 이벤트 발생
+13:23:59:134| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:24:01:334| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:24:03:278| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:24:06:494| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+13:24:57:134| Sequence Dlg - Auto Run 버튼 클릭 이벤트 발생
+13:25:09:003| IO Dlg - 1번 Module 0번 Output ON!
+13:25:11:957| IO Dlg - 1번 Module 0번 Output OFF!
+13:25:11:963| IO Dlg - 1번 Module 1번 Output ON!
+13:25:14:424| IO Dlg - 1번 Module 1번 Output OFF!
+13:25:14:427| IO Dlg - 1번 Module 2번 Output ON!
+13:25:16:145| IO Dlg - 1번 Module 0번 Output ON!
+13:25:16:153| IO Dlg - 1번 Module 1번 Output ON!
+13:25:16:157| IO Dlg - 1번 Module 2번 Output ON!
+13:25:22:426| IO Dlg - 1번 Module 0번 Output ON!
+13:25:25:388| IO Dlg - 1번 Module 0번 Output OFF!
+13:25:25:397| IO Dlg - 1번 Module 1번 Output ON!
+13:25:27:856| IO Dlg - 1번 Module 1번 Output OFF!
+13:25:27:859| IO Dlg - 1번 Module 2번 Output ON!
+13:25:29:581| IO Dlg - 1번 Module 0번 Output ON!
+13:25:29:584| IO Dlg - 1번 Module 1번 Output ON!
+13:25:29:595| IO Dlg - 1번 Module 2번 Output ON!
+13:25:33:570| IO Dlg - 1번 Module 0번 Output ON!
+13:25:36:526| IO Dlg - 1번 Module 0번 Output OFF!
+13:25:36:537| IO Dlg - 1번 Module 1번 Output ON!
+13:25:39:005| IO Dlg - 1번 Module 1번 Output OFF!
+13:25:39:014| IO Dlg - 1번 Module 2번 Output ON!
+13:25:40:742| IO Dlg - 1번 Module 0번 Output ON!
+13:25:40:753| IO Dlg - 1번 Module 1번 Output ON!
+13:25:40:757| IO Dlg - 1번 Module 2번 Output ON!
+13:26:10:524| Main Dlg - 프로그램시작 이벤트 발생
+13:26:14:550| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+13:27:32:544| Main Dlg - 프로그램시작 이벤트 발생
+13:27:37:398| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+13:28:00:462| Main Dlg - 프로그램시작 이벤트 발생
+13:28:02:055| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+13:28:15:550| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:28:19:950| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:28:24:374| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:28:35:767| Main Dlg - 프로그램시작 이벤트 발생
+13:28:42:702| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:28:45:118| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:28:47:773| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:28:50:350| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+13:30:27:976| Main Dlg - 프로그램시작 이벤트 발생
+13:30:30:422| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:30:33:944| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:30:36:550| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+13:30:38:046| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+13:31:06:174| Sequence Dlg - Auto Run 버튼 클릭 이벤트 발생
+13:31:18:034| IO Dlg - 1번 Module 0번 Output ON!
+13:31:20:995| IO Dlg - 1번 Module 0번 Output OFF!
+13:31:21:003| IO Dlg - 1번 Module 1번 Output ON!
+13:31:23:462| IO Dlg - 1번 Module 1번 Output OFF!
+13:31:23:470| IO Dlg - 1번 Module 2번 Output ON!
+13:31:25:190| IO Dlg - 1번 Module 0번 Output ON!
+13:31:25:193| IO Dlg - 1번 Module 1번 Output ON!
+13:31:25:199| IO Dlg - 1번 Module 2번 Output ON!
+13:31:31:473| IO Dlg - 1번 Module 0번 Output ON!
+13:31:34:437| IO Dlg - 1번 Module 0번 Output OFF!
+13:31:34:440| IO Dlg - 1번 Module 1번 Output ON!
+13:31:36:903| IO Dlg - 1번 Module 1번 Output OFF!
+13:31:36:913| IO Dlg - 1번 Module 2번 Output ON!
+13:31:38:629| IO Dlg - 1번 Module 0번 Output ON!
+13:31:38:633| IO Dlg - 1번 Module 1번 Output ON!
+13:31:38:643| IO Dlg - 1번 Module 2번 Output ON!
+13:31:42:615| IO Dlg - 1번 Module 0번 Output ON!
+13:31:45:583| IO Dlg - 1번 Module 0번 Output OFF!
+13:31:45:586| IO Dlg - 1번 Module 1번 Output ON!
+13:31:48:052| IO Dlg - 1번 Module 1번 Output OFF!
+13:31:48:056| IO Dlg - 1번 Module 2번 Output ON!
+13:31:49:788| IO Dlg - 1번 Module 0번 Output ON!
+13:31:49:792| IO Dlg - 1번 Module 1번 Output ON!
+13:31:49:811| IO Dlg - 1번 Module 2번 Output ON!
+14:02:55:251| Main Dlg - 프로그램시작 이벤트 발생
+14:21:46:078| Main Dlg - 프로그램시작 이벤트 발생
+14:21:48:128| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+14:21:50:648| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+14:21:53:376| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+14:21:55:688| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+14:21:58:264| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+14:22:18:985| Sequence Dlg - Auto Run 버튼 클릭 이벤트 발생
+14:22:30:850| IO Dlg - 1번 Module 0번 Output ON!
+14:22:33:812| IO Dlg - 1번 Module 0번 Output OFF!
+14:22:33:820| IO Dlg - 1번 Module 1번 Output ON!
+14:22:36:281| IO Dlg - 1번 Module 1번 Output OFF!
+14:22:36:289| IO Dlg - 1번 Module 2번 Output ON!
+14:22:38:010| IO Dlg - 1번 Module 0번 Output ON!
+14:22:38:013| IO Dlg - 1번 Module 1번 Output ON!
+14:22:38:019| IO Dlg - 1번 Module 2번 Output ON!
+14:22:44:287| IO Dlg - 1번 Module 0번 Output ON!
+14:22:47:256| IO Dlg - 1번 Module 0번 Output OFF!
+14:22:47:260| IO Dlg - 1번 Module 1번 Output ON!
+14:22:49:723| IO Dlg - 1번 Module 1번 Output OFF!
+14:22:49:726| IO Dlg - 1번 Module 2번 Output ON!
+14:22:51:452| IO Dlg - 1번 Module 0번 Output ON!
+14:22:51:455| IO Dlg - 1번 Module 1번 Output ON!
+14:22:51:467| IO Dlg - 1번 Module 2번 Output ON!
+14:22:55:452| IO Dlg - 1번 Module 0번 Output ON!
+14:22:58:423| IO Dlg - 1번 Module 0번 Output OFF!
+14:22:58:427| IO Dlg - 1번 Module 1번 Output ON!
+14:23:00:893| IO Dlg - 1번 Module 1번 Output OFF!
+14:23:00:896| IO Dlg - 1번 Module 2번 Output ON!
+14:23:02:627| IO Dlg - 1번 Module 0번 Output ON!
+14:23:02:631| IO Dlg - 1번 Module 1번 Output ON!
+14:23:02:641| IO Dlg - 1번 Module 2번 Output ON!
+14:24:10:744| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+14:24:12:944| Sequence Dlg - Auto Run 버튼 클릭 이벤트 발생
+14:24:22:602| Main Dlg - 프로그램종료 이벤트 발생
+14:27:23:910| Main Dlg - 프로그램시작 이벤트 발생
+14:27:25:713| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+14:27:27:848| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+14:27:30:609| Motion Dlg - Servo On 버튼 클릭 이벤트 발생 -> 켬
+14:27:33:161| Sequence Dlg - Initialize 버튼 클릭 이벤트 발생
+14:27:53:369| Sequence Dlg - Auto Run 버튼 클릭 이벤트 발생
+14:28:05:233| IO Dlg - 1번 Module 0번 Output ON!
+14:28:08:193| IO Dlg - 1번 Module 0번 Output OFF!
+14:28:08:201| IO Dlg - 1번 Module 1번 Output ON!
+14:28:10:650| IO Dlg - 1번 Module 1번 Output OFF!
+14:28:10:659| IO Dlg - 1번 Module 2번 Output ON!
+14:28:12:379| IO Dlg - 1번 Module 0번 Output ON!
+14:28:12:382| IO Dlg - 1번 Module 1번 Output ON!
+14:28:12:388| IO Dlg - 1번 Module 2번 Output ON!
+14:28:18:655| IO Dlg - 1번 Module 0번 Output ON!
+14:28:21:621| IO Dlg - 1번 Module 0번 Output OFF!
+14:28:21:625| IO Dlg - 1번 Module 1번 Output ON!
+14:28:24:091| IO Dlg - 1번 Module 1번 Output OFF!
+14:28:24:099| IO Dlg - 1번 Module 2번 Output ON!
+14:28:25:825| IO Dlg - 1번 Module 0번 Output ON!
+14:28:25:834| IO Dlg - 1번 Module 1번 Output ON!
+14:28:25:846| IO Dlg - 1번 Module 2번 Output ON!
+14:28:29:810| IO Dlg - 1번 Module 0번 Output ON!
+14:28:32:768| IO Dlg - 1번 Module 0번 Output OFF!
+14:28:32:776| IO Dlg - 1번 Module 1번 Output ON!
+14:28:35:244| IO Dlg - 1번 Module 1번 Output OFF!
+14:28:35:247| IO Dlg - 1번 Module 2번 Output ON!
+14:28:36:979| IO Dlg - 1번 Module 0번 Output ON!
+14:28:36:988| IO Dlg - 1번 Module 1번 Output ON!
+14:28:37:000| IO Dlg - 1번 Module 2번 Output ON!
+15:42:02:307| Main Dlg - 프로그램시작 이벤트 발생
+15:43:02:770| Main Dlg - 프로그램시작 이벤트 발생
+15:47:37:738| Main Dlg - 프로그램시작 이벤트 발생
+15:47:39:120| Main Dlg - 프로그램종료 이벤트 발생
+15:55:39:274| Main Dlg - 프로그램시작 이벤트 발생
+16:03:10:980| Main Dlg - 프로그램시작 이벤트 발생
+16:07:41:338| Main Dlg - 프로그램종료 이벤트 발생
+16:07:45:690| Main Dlg - 프로그램시작 이벤트 발생
+16:07:55:899| Main Dlg - 프로그램종료 이벤트 발생
+16:15:20:579| Main Dlg - 프로그램시작 이벤트 발생
+16:16:13:253| Main Dlg - 프로그램시작 이벤트 발생
+16:16:46:604| Main Dlg - 프로그램시작 이벤트 발생
+16:17:07:505| Main Dlg - 프로그램시작 이벤트 발생
+16:26:25:840| Main Dlg - 프로그램시작 이벤트 발생

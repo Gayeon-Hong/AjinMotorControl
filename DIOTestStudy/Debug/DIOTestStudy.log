@@ -1,0 +1,46 @@
+﻿빌드 시작: 2022-12-15 오전 10:45:57
+     1>2 노드의 "C:\letsgo (2) (2)\DIOTestStudy\DIOTestStudy.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\DIOTestStudy.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\DIOTestStudy.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt AJinLibrary.cpp DIOTestStudy.cpp DIOTestStudyDlg.cpp IO.cpp IOClass.cpp JogButton.cpp LogDlg.cpp MOTION.cpp MonitorClass.cpp MotionClass.cpp SETTING.cpp STATUS.cpp SequenceDlg.cpp SettingClass.cpp StatusClass.cpp
+         건너뛰고 있습니다... (관련된 변경 내용 없음)
+         StatusClass.cpp
+         SettingClass.cpp
+         SequenceDlg.cpp
+         STATUS.cpp
+         SETTING.cpp
+         MotionClass.cpp
+         MonitorClass.cpp
+         MOTION.cpp
+         LogDlg.cpp
+         JogButton.cpp
+         IOClass.cpp
+         IO.cpp
+         DIOTestStudyDlg.cpp
+         DIOTestStudy.cpp
+         AJinLibrary.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\letsgo (2) (2)\Debug\DIOTestStudy.exe" /INCREMENTAL /NOLOGO winmm.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"C:\letsgo (2) (2)\Debug\DIOTestStudy.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\letsgo (2) (2)\Debug\DIOTestStudy.lib" /MACHINE:X86 Debug\DIOTestStudy.res
+         Debug\AJinLibrary.obj
+         Debug\DIOTestStudy.obj
+         Debug\DIOTestStudyDlg.obj
+         Debug\IO.obj
+         Debug\IOClass.obj
+         Debug\JogButton.obj
+         Debug\LogDlg.obj
+         Debug\MonitorClass.obj
+         Debug\MOTION.obj
+         Debug\MotionClass.obj
+         Debug\SequenceDlg.obj
+         Debug\SETTING.obj
+         Debug\SettingClass.obj
+         Debug\STATUS.obj
+         Debug\StatusClass.obj
+         Debug\stdafx.obj
+         DIOTestStudy.vcxproj -> C:\letsgo (2) (2)\Debug\DIOTestStudy.exe
+     1>"C:\letsgo (2) (2)\DIOTestStudy\DIOTestStudy.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:02.96

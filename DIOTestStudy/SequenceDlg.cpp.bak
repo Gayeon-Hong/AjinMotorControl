@@ -1,0 +1,431 @@
+// SequenceDlg.cpp : 구현 파일입니다.
+//
+
+#include "stdafx.h"
+#include "DIOTestStudy.h"
+#include "SequenceDlg.h"
+#include "afxdialogex.h"
+#include "IOClass.h"
+#include "MotionClass.h"
+#include "MonitorClass.h"
+#include "SettingClass.h"
+#include "StatusClass.h"
+#define EMOOFFSET 10
+#define STOPBTNOFFSET 1
+#define X 0
+#define Y 1
+#define Z 2
+// SequenceDlg 대화 상자입니다.
+
+IMPLEMENT_DYNAMIC(SequenceDlg, CDialogEx)
+CIOClass *pIOClassSeq;
+CMotionClass *pMotionClassSeq;
+CMonitorClass *pMonitorClassSeq;
+CSettingClass *pSettingClassSeq;
+CStatusClass *pStatusClassSeq;
+SequenceDlg::SequenceDlg(CWnd* pParent /*=NULL*/)
+	: CDialogEx(SequenceDlg::IDD, pParent)
+{
+
+}
+
+SequenceDlg::~SequenceDlg()
+{
+}
+
+
+BOOL SequenceDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	m_InitialBtn.SetFaceColor(RGB(150, 150, 150));
+	m_AutoRunBtn.SetFaceColor(RGB(150, 150, 150));
+
+	// TODO:  여기에 추가 초기화 작업을 추가합니다.
+	m_pStopThread = AfxBeginThread(StopThread, this);
+	if (m_pStopThread == NULL)
+		AfxMessageBox(_T("Error!"));
+
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
+}
+
+void SequenceDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_EMO_BTN, m_EmoStat);
+	DDX_Control(pDX, IDC_STOP_BTN, m_StopIOBtn);
+	DDX_Control(pDX, IDC_STOP_BTN, m_StopIOBtn);
+	DDX_Control(pDX, IDC_EDT_XREADYPOS, m_XReadyPos);
+	DDX_Control(pDX, IDC_EDT_XWRPOS, m_XWorkingReadyPos);
+	DDX_Control(pDX, IDC_EDT_YWRPOS, m_YWorkingReadyPos);
+	DDX_Control(pDX, IDC_EDT_YREADYPOS, m_YReadyPos);
+	DDX_Control(pDX, IDC_EDT_ZREADYPOS, m_ZReadyPos);
+	DDX_Control(pDX, IDC_EDT_ZWRPOS, m_ZWorkingReadyPos);
+	DDX_Control(pDX, IDC_AutoRunBtn, m_AutoRunBtn);
+	DDX_Control(pDX, IDC_InitializeBtn, m_InitialBtn);
+}
+
+
+BEGIN_MESSAGE_MAP(SequenceDlg, CDialogEx)
+	ON_BN_CLICKED(IDC_BUTTONEXIT, &SequenceDlg::OnBnClickedButtonexit)
+	ON_WM_DESTROY()
+	ON_BN_CLICKED(IDC_InitializeBtn, &SequenceDlg::OnBnClickedInitializebtn)
+	ON_BN_CLICKED(IDC_AutoRunBtn, &SequenceDlg::OnBnClickedAutorunbtn)
+END_MESSAGE_MAP()
+
+
+// SequenceDlg 메시지 처리기입니다.
+
+
+void SequenceDlg::OnBnClickedButtonexit()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	ShowWindow(SW_HIDE);
+	bflag = FALSE;
+}
+
+UINT SequenceDlg::StopThread(LPVOID _mothod)
+{
+	
+	SequenceDlg *Sequence = (SequenceDlg*)_mothod;
+
+	while (true)
+	{
+		if (pIOClassSeq->GetInput(0, EMOOFFSET))
+		{
+			Sequence->bEMOFlag = TRUE;
+			Sequence->m_EmoStat.SetFaceColor(RGB(255, 0, 0));
+			//위에 빨간 램프
+			pIOClassSeq->SetOutput(0, EMOOFFSET, TRUE);
+		}
+		else
+		{
+			Sequence->bEMOFlag = FALSE;
+			Sequence->m_EmoStat.SetFaceColor(RGB(150, 150, 150));
+			pIOClassSeq->SetOutput(0, EMOOFFSET, FALSE);
+		}
+
+		if (pIOClassSeq->GetInput(0, STOPBTNOFFSET) || pIOClassSeq->GetOutput(0, STOPBTNOFFSET))
+		{
+			Sequence->m_StopIOBtn.SetFaceColor(RGB(255, 0, 0));
+		}
+		else
+		{
+			Sequence->m_StopIOBtn.SetFaceColor(RGB(150, 150, 150));
+		}
+
+		Sleep(10);
+
+	}
+	return 0;
+}
+
+
+void SequenceDlg::OnBnClickedInitializebtn()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+
+	long	lHomeDir;
+	DWORD	dwHomeSignal, dwLevelHome, dwZphas;
+	double dVelFirst, dVelSecond, dVelThird, dVelLast, dAccFirst, dAccSecond;
+	double	dHomeClrTime, dHomeOffset;
+
+	for (int Axis = X; Axis < Z; Axis++)
+	{
+		pSettingClassSeq->GetHomeMethod(Axis, &lHomeDir, &dwHomeSignal, &dwZphas, &dHomeClrTime, &dHomeOffset);
+		pSettingClassSeq->GetHomeVel(Axis, &dVelFirst, &dVelSecond, &dVelThird, &dVelLast, &dAccFirst, &dAccSecond);
+
+		pSettingClassSeq->SetHomeMethod(Axis, lHomeDir, dwHomeSignal, dwZphas, dHomeClrTime, dHomeOffset);
+		pSettingClassSeq->SetHomeVel(Axis, dVelFirst, dVelSecond, dVelThird, dVelLast, dAccFirst, dAccSecond);
+	}
+
+	m_pHomeThread= AfxBeginThread(HomeSearchThread, this);
+	if (m_pHomeThread == NULL)
+		AfxMessageBox(_T("Error!"));	
+}
+
+UINT SequenceDlg::HomeSearchThread(LPVOID _mothod)
+{
+	SequenceDlg *Sequence = (SequenceDlg*)_mothod;
+	while (pMotionClassSeq->GetHomeResult(X) != HOME_SUCCESS ||
+		   pMotionClassSeq->GetHomeResult(Y) != HOME_SUCCESS ||
+		   pMotionClassSeq->GetHomeResult(Z) != HOME_SUCCESS)
+	{
+		if (pMotionClassSeq->GetHomeResult(X) != HOME_SUCCESS && pMotionClassSeq->GetHomeResult(X) != HOME_SEARCHING)
+		{
+			pMotionClassSeq->StartHomeSearch(X);
+			Sleep(3000);
+		}
+		else
+		{
+			if (pMotionClassSeq->GetHomeResult(Y) != HOME_SUCCESS && pMotionClassSeq->GetHomeResult(Y) != HOME_SEARCHING)
+			{
+				pMotionClassSeq->StartHomeSearch(Y);
+				Sleep(3000);
+			}
+			else
+			{
+				if (pMotionClassSeq->GetHomeResult(Z) != HOME_SUCCESS && pMotionClassSeq->GetHomeResult(Z) != HOME_SEARCHING)
+				{
+						pMotionClassSeq->StartHomeSearch(Z);
+						Sleep(3000);
+						//if (pMotionClassSeq->GetHomeResult(Z) == HOME_SUCCESS)
+						//{	
+						//}
+						//else
+						//{
+						//	pMotionClassSeq->StartHomeSearch(Z);
+						//	Sleep(3000);
+						//}
+				}
+			}
+
+		}
+	} 
+	if (pMotionClassSeq->GetHomeBoolResult(X) &&
+		pMotionClassSeq->GetHomeBoolResult(Y) &&
+		pMotionClassSeq->GetHomeBoolResult(Z))
+	{
+		Sequence->m_pXReadyThread = AfxBeginThread(XReadyThread, Sequence);
+		if (Sequence->m_pXReadyThread == NULL)
+			AfxMessageBox(_T("Error!"));
+		Sequence->m_pYReadyThread = AfxBeginThread(YReadyThread, Sequence);
+		if (Sequence->m_pYReadyThread == NULL)
+			AfxMessageBox(_T("Error!"));
+		Sequence->m_pZReadyThread = AfxBeginThread(ZReadyThread, Sequence);
+		if (Sequence->m_pZReadyThread == NULL)
+			AfxMessageBox(_T("Error!"));
+		Sequence->m_pInitializeThread = AfxBeginThread(InitializeThread, Sequence);
+		if (Sequence->m_pInitializeThread == NULL)
+			AfxMessageBox(_T("Error!"));
+	}
+
+	return 0;
+}
+
+UINT SequenceDlg::XReadyThread(LPVOID _mothod)
+{
+	SequenceDlg *Sequence = (SequenceDlg*)_mothod;
+	CString strData;
+	double	dMovePos, dMoveVel, dMoveAcc, dMoveDec;
+	pSettingClassSeq->GetParameter(X, &dMovePos, &dMoveVel, &dMoveAcc, &dMoveDec);
+	Sequence->GetDlgItemText(IDC_EDT_XREADYPOS, strData);
+	while (_wtof(strData) == pMonitorClassSeq->GetCmdPos(X))
+	{
+		pMotionClassSeq->SingleMove(X, dMovePos, dMoveVel, dMoveAcc, dMoveDec);
+		Sleep(10);
+		if (_wtof(strData) == pMonitorClassSeq->GetCmdPos(X))
+			Sequence->XisReady = TRUE;
+		else
+		{
+			Sequence->XisReady = FALSE;
+		}
+	}
+	return 0;
+}
+
+
+UINT SequenceDlg::YReadyThread(LPVOID _mothod)
+{
+	SequenceDlg *Sequence = (SequenceDlg*)_mothod;
+	CString strData;
+	double	dMovePos, dMoveVel, dMoveAcc, dMoveDec;
+	pSettingClassSeq->GetParameter(Y, &dMovePos, &dMoveVel, &dMoveAcc, &dMoveDec);
+	Sequence->GetDlgItemText(IDC_EDT_YREADYPOS, strData);
+	while (_wtof(strData) == pMonitorClassSeq->GetCmdPos(Y))
+	{
+		pMotionClassSeq->SingleMove(Y, dMovePos, dMoveVel, dMoveAcc, dMoveDec);
+		if (_wtof(strData) == pMonitorClassSeq->GetCmdPos(Y))
+			Sequence->YisReady = TRUE;
+		else
+		{
+			Sequence->YisReady = FALSE;
+		}
+		Sleep(10);
+	}
+	
+	return 0;
+}
+
+
+UINT SequenceDlg::ZReadyThread(LPVOID _mothod)
+{
+	SequenceDlg *Sequence = (SequenceDlg*)_mothod;
+	CString strData;
+	double	dMovePos, dMoveVel, dMoveAcc, dMoveDec;
+	pSettingClassSeq->GetParameter(Z, &dMovePos, &dMoveVel, &dMoveAcc, &dMoveDec);
+	Sequence->GetDlgItemText(IDC_EDT_ZREADYPOS, strData);
+	while (_wtof(strData) == pMonitorClassSeq->GetCmdPos(Z))
+	{
+		pMotionClassSeq->SingleMove(Z, dMovePos, dMoveVel, dMoveAcc, dMoveDec);
+		if (_wtof(strData) == pMonitorClassSeq->GetCmdPos(Z))
+			Sequence->ZisReady = TRUE;
+		else
+		{
+			Sequence->ZisReady = FALSE;
+		}
+		Sequence->ZisReady = TRUE;
+		Sleep(10);
+	}
+	
+	return 0;
+}
+
+UINT SequenceDlg::InitializeThread(LPVOID _mothod)
+{
+	SequenceDlg *Sequence = (SequenceDlg*)_mothod;
+	while (true)
+	{
+		if (Sequence->XisReady == TRUE && Sequence->YisReady == TRUE && Sequence->ZisReady == TRUE)
+		{
+			Sequence->IsInit = TRUE;
+			AfxMessageBox(_T("Initialize 완료!"));
+			
+			if (NULL != Sequence->m_pXReadyThread)
+			{
+				::SuspendThread(Sequence->m_pXReadyThread->m_hThread);
+			}
+			if (NULL != Sequence->m_pYReadyThread)
+			{
+				::SuspendThread(Sequence->m_pYReadyThread->m_hThread);
+			}
+			if (NULL != Sequence->m_pZReadyThread)
+			{
+				::SuspendThread(Sequence->m_pZReadyThread->m_hThread);
+			}
+			Sequence->m_InitialBtn.SetFaceColor(RGB(0, 255, 0));
+			Sequence->m_AutoRunBtn.SetFaceColor(RGB(0, 255, 0));
+		}
+		else
+		{
+			Sequence->IsInit = FALSE;
+			Sequence->m_InitialBtn.SetFaceColor(RGB(150, 150, 150));
+			Sequence->m_AutoRunBtn.SetFaceColor(RGB(150, 150, 150));
+		}
+		Sleep(10);
+	}
+	return 0;
+}
+
+
+void SequenceDlg::OnBnClickedAutorunbtn()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	if (IsInit)
+	{
+		m_pZReadyThread = AfxBeginThread(ZReadyThread, this);
+		if (m_pZReadyThread == NULL)
+			AfxMessageBox(_T("Error!"));
+		//m_pYWorkingThread = AfxBeginThread(YWorkingThread, this);
+		//if (m_pYWorkingThread == NULL)
+		//	AfxMessageBox(_T("Error!"));
+		//m_pXWorkingThread = AfxBeginThread(XWorkingThread, this);
+		//if (m_pXWorkingThread == NULL)
+		//	AfxMessageBox(_T("Error!"));
+	}	
+	else
+	{
+		AfxMessageBox(_T("Intialize가 완료되지 않았습니다! 다시 시도해주세요"));
+	}
+}
+
+UINT SequenceDlg::XWorkingThread(LPVOID _mothod)
+{
+	SequenceDlg *Sequence = (SequenceDlg*)_mothod;
+	CString strData;
+	int i;
+	switch (i)
+	{
+	case 1:
+		Sequence->GetDlgItemText(IDC_EDT_XWORKPOS1, strData);
+	case 2:
+		Sequence->GetDlgItemText(IDC_EDT_XWORKPOS2, strData);
+	case 3:
+		Sequence->GetDlgItemText(IDC_EDT_XWORKPOS3, strData);
+
+	default:
+		break;
+	}
+	double	dMovePos, dMoveVel, dMoveAcc, dMoveDec;
+	pSettingClassSeq->GetParameter(X, &dMovePos, &dMoveVel, &dMoveAcc, &dMoveDec);
+	while (_wtof(strData) == pMonitorClassSeq->GetCmdPos(X))
+	{
+		pMotionClassSeq->SingleMove(X, dMovePos, dMoveVel, dMoveAcc, dMoveDec);
+		Sleep(10);
+	}
+
+	return 0;
+}
+
+UINT SequenceDlg::YWorkingThread(LPVOID _mothod)
+{
+	SequenceDlg *Sequence = (SequenceDlg*)_mothod;
+	CString strData;
+	int i;
+	switch (i)
+	{
+	case 1:
+		Sequence->GetDlgItemText(IDC_EDT_YWORKPOS1, strData);
+	case 2:
+		Sequence->GetDlgItemText(IDC_EDT_YWORKPOS2, strData);
+	case 3:
+		Sequence->GetDlgItemText(IDC_EDT_YWORKPOS3, strData);
+
+	default:
+		break;
+	}
+	double	dMovePos, dMoveVel, dMoveAcc, dMoveDec;
+	pSettingClassSeq->GetParameter(Y, &dMovePos, &dMoveVel, &dMoveAcc, &dMoveDec);
+	while (_wtof(strData) == pMonitorClassSeq->GetCmdPos(Y))
+	{
+		pMotionClassSeq->SingleMove(Y, dMovePos, dMoveVel, dMoveAcc, dMoveDec);
+		Sleep(10);
+	}
+
+	return 0;
+}
+
+UINT SequenceDlg::ZWorkingThread(LPVOID _mothod)
+{
+	SequenceDlg *Sequence = (SequenceDlg*)_mothod;
+	CString strData;
+	int i;
+	switch (i)
+	{
+	case 1:
+		Sequence->GetDlgItemText(IDC_EDT_ZWORKPOS1, strData);
+	case 2:
+		Sequence->GetDlgItemText(IDC_EDT_ZWORKPOS2, strData);
+	case 3:
+		Sequence->GetDlgItemText(IDC_EDT_ZWORKPOS3, strData);
+
+	default:
+		break;
+	}
+	double	dMovePos, dMoveVel, dMoveAcc, dMoveDec;
+	pSettingClassSeq->GetParameter(Z, &dMovePos, &dMoveVel, &dMoveAcc, &dMoveDec);
+	while (_wtof(strData) == pMonitorClassSeq->GetCmdPos(Z))
+	{
+		pMotionClassSeq->SingleMove(Z, dMovePos, dMoveVel, dMoveAcc, dMoveDec);
+		Sleep(10);
+	}
+
+	return 0;
+}
+#pragma region stop thread : ondestroy 이벤트
+void SequenceDlg::OnDestroy()
+{
+	CDialog::OnDestroy();
+
+	if (NULL != m_pStopThread)
+	{
+		::SuspendThread(m_pStopThread->m_hThread);
+	}
+	//if (NULL != m_pHomeThread)
+	//{
+	//	::SuspendThread(m_pHomeThread->m_hThread);
+	//}
+}
+#pragma endregion

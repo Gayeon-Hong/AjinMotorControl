@@ -1,0 +1,31 @@
+﻿빌드 시작: 2022-07-07 오후 3:27:43
+     1>2 노드의 "C:\Users\HVS\Documents\Visual Studio 2013\Projects\DIOTestStudy\DIOTestStudy\DIOTestStudy.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _MBCS /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\DIOTestStudy.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\atlmfc\include\afx.h(33) : 'MBCS_Support_Deprecated_In_MFC' 선언을 참조하십시오.
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _MBCS /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\DIOTestStudy.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt DIOTestStudy.cpp DIOTestStudyDlg.cpp IO.cpp LOG.cpp Setting.cpp
+         DIOTestStudy.cpp
+         DIOTestStudyDlg.cpp
+         IO.cpp
+         LOG.cpp
+         Setting.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D NDEBUG /D _AFXDLL /l"0x0412" /IRelease\ /nologo /fo"Release\DIOTestStudy.res" DIOTestStudy.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\HVS\Documents\Visual Studio 2013\Projects\DIOTestStudy\Release\DIOTestStudy.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"C:\Users\HVS\Documents\Visual Studio 2013\Projects\DIOTestStudy\Release\DIOTestStudy.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\HVS\Documents\Visual Studio 2013\Projects\DIOTestStudy\Release\DIOTestStudy.lib" /MACHINE:X86 /SAFESEH Release\DIOTestStudy.res
+         Release\DIOTestStudy.obj
+         Release\DIOTestStudyDlg.obj
+         Release\IO.obj
+         Release\LOG.obj
+         Release\Setting.obj
+         Release\stdafx.obj
+         코드를 생성하고 있습니다.
+         코드를 생성했습니다.
+         DIOTestStudy.vcxproj -> C:\Users\HVS\Documents\Visual Studio 2013\Projects\DIOTestStudy\Release\DIOTestStudy.exe
+     1>"C:\Users\HVS\Documents\Visual Studio 2013\Projects\DIOTestStudy\DIOTestStudy\DIOTestStudy.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:02.27

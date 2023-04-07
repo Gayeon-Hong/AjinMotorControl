@@ -1,0 +1,18 @@
+Motor Waiting Time : 1
+Axis X Ready Position : 10000
+Axis X Work Ready Position : 15000
+Axis X Working Position #1 : 20000
+Axis X Working Position #2 : 30000
+Axis X Working Position #3 : 25000
+
+Axis Y Ready Position : 10000
+Axis Y Work Ready Position : 15000
+Axis Y Working Position #1 : 20000
+Axis Y Working Position #2 : 30000
+Axis Y Working Position #3 : 20000
+
+Axis Z Ready Position : 10000
+Axis Z Work Ready Position : 15000
+Axis Z Working Position #1 : 20000
+Axis Z Working Position #2 : 30000
+Axis Z Working Position #3 : 1000

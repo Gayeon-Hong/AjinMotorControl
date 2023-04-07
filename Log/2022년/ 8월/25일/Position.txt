@@ -1,0 +1,36 @@
+14:27:33:162| Initialize 시작
+14:27:41:166| X축 위치 | 0.000000 (Home) 
+14:27:46:246| Y축 위치 | 0.000000 (Home) 
+14:27:49:63| Z축 위치 | 0.000000 (Home) 
+14:27:50:193| Z축 위치 | 10000.000000 (Ready Position) 
+14:27:50:273| Y축 위치 | 10000.000000 (Ready Position) 
+14:27:50:276| X축 위치 | 10000.000000 (Ready Position) 
+14:27:51:681| Initialize 완료
+Initialize 소요시간| 00:00:18:519
+14:27:53:371| AutoRun 시작
+14:27:55:076|Y축 위치 | 15000.000000 (Work Ready Position) 
+14:27:56:785| X축 위치 | 15000.000000 (Work Ready Position) 
+14:27:58:493| Z축 위치 | 15000.000000 (Work Ready Position) 
+14:28:00:744| Y축 위치 | 30000.000000 (Working #2 Position) 
+14:28:02:973| X축 위치 | 30000.000000 (Working #2 Position) 
+14:28:05:225| Z축 위치 | 30000.000000 (Working #2 Position) 
+14:28:08:185| Z축 위치 | 1000.000000 (Working #3 Position) 
+14:28:10:649| Z축 위치 | 20000.000000 (Working #1 Position) 
+14:28:12:370| Z축 위치 | 15000.000000 (Work Ready Position) 
+14:28:14:392| Y축 위치 | 20000.000000 (Working #1 Position) 
+14:28:16:398| X축 위치 | 20000.000000 (Working #1 Position) 
+14:28:18:653| Z축 위치 | 30000.000000 (Working #2 Position) 
+14:28:21:611| Z축 위치 | 1000.000000 (Working #3 Position) 
+14:28:24:080| Z축 위치 | 20000.000000 (Working #1 Position) 
+14:28:25:814| Z축 위치 | 15000.000000 (Work Ready Position) 
+14:28:25:848| Y축 위치 | 20000.000000 (Working #3 Position) 
+14:28:27:553| X축 위치 | 25000.000000 (Working #3 Position) 
+14:28:29:799| Z축 위치 | 30000.000000 (Working #2 Position) 
+14:28:32:757| Z축 위치 | 1000.000000 (Working #3 Position) 
+14:28:35:233| Z축 위치 | 20000.000000 (Working #1 Position) 
+14:28:36:968| Z축 위치 | 15000.000000 (Work Ready Position) 
+14:28:38:706| Z축 위치 | 10000.000000 (Ready Position) 
+14:28:41:923| X축 위치 | 10000.000000 (Ready Position) 
+14:28:41:941| Y축 위치 | 10000.000000 (Ready Position) 
+14:28:43:882| AutoRun 완료
+AutoRun 소요시간| 00:00:50:511
